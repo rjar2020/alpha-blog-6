@@ -1,1 +1,1 @@
-# Ruby on Rails (RoR) test repo
+# Ruby on Rails (RoR6) - Alpha Blog 
