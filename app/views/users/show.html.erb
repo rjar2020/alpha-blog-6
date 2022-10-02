@@ -11,8 +11,8 @@
   <strong>Email:</strong>
   <%= @user.email %>
 </p>
-<br>
 <h2>Articles</h2>
+<br>
 
 <div class="flickr_pagination">
     <%= will_paginate @articles, :container => false %>
@@ -21,12 +21,9 @@
 
 <%= render 'articles/article' %>
 
-<%= render 'sessions/login_footer' %>
-
-<%= link_to 'Edit user\'s profile', edit_user_path(@user) %>
-
-<%= link_to 'Article listing', articles_path %>
-
-<%= link_to 'Users listing', users_path %>
-
-<%= link_to 'Home', root_path %>
+<p>
+  <% if logged_in? && @user == current_user %>
+    <%= link_to 'Edit user\'s profile', edit_user_path(@user) %>
+  <%end%>
+  <%= render 'sessions/login_footer' %>
+</p>
