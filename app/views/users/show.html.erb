@@ -14,6 +14,11 @@
 <br>
 <h2>Articles</h2>
 
+<div class="flickr_pagination">
+    <%= will_paginate @articles, :container => false %>
+</div>
+<br>
+
 <%= render 'articles/article' %>
 
 <%= link_to 'Edit user\'s profile', edit_user_path(@user) %>

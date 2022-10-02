@@ -15,7 +15,9 @@
         <td><%= article.title %></td>
         <td><%= article.description %></td>
         <td><%= time_ago_in_words(article.created_at) %></td>
-         <td><%= article.user.username if article.user %></td>
+        <% if article.user %>
+          <td><%= link_to article.user.username, user_path(article.user) %></td>
+        <% end %>
         <td><%= link_to 'Show', article %></td>
         <td><%= link_to 'Edit', edit_article_path(article) %></td>
         <td><%= link_to 'Delete', article_path(article), method: :delete, data: { confirm: "Are you sure?"} %></td>
