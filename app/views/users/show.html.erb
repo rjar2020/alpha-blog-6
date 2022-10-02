@@ -6,11 +6,12 @@
   <strong>Username:</strong>
   <%= @user.username %>
 </p>
-
-<p>
-  <strong>Email:</strong>
-  <%= @user.email %>
-</p>
+<% if logged_in? %>
+  <p>
+    <strong>Email:</strong>
+    <%= @user.email %>
+  </p>
+<%end%>
 <h2>Articles</h2>
 <br>
 
