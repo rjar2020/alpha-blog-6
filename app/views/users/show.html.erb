@@ -21,6 +21,13 @@
 
 <%= render 'articles/article' %>
 
+<% if logged_in? %>
+  <%= link_to 'Logout', logout_path, method: :delete %>
+<% else %>
+  <%= link_to 'Login', login_path %>
+  <%= link_to 'Signup', signup_path %>
+<% end %>
+
 <%= link_to 'Edit user\'s profile', edit_user_path(@user) %>
 
 <%= link_to 'Article listing', articles_path %>
@@ -28,5 +35,3 @@
 <%= link_to 'Users listing', users_path %>
 
 <%= link_to 'Home', root_path %>
-
-<%= link_to 'Logout', logout_path, method: :delete %>
