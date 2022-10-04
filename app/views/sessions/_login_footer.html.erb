@@ -1,6 +1,11 @@
 <% if logged_in? %>
+  <% profile = current_user.username + "'s Profile" %>
   <%= link_to 'Logout', logout_path, method: :delete %>
-  <%= link_to current_user.username, user_path(current_user) %>
+  <% if current_user.admin? %>
+    <%= link_to "(Admin) " + profile, user_path(current_user) %>
+  <% else %>
+    <%= link_to profile, user_path(current_user) %>
+  <% end %>
 <% else %>
   <%= link_to 'Login', login_path %>
   <%= link_to 'Signup', signup_path %>
