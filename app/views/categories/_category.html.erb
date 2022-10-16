@@ -1,21 +1,3 @@
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Created</th>
-      <th>Edited</th>
-      <th colspan="1">Actions</th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @categories.each do |category| %>
-      <tr>
-        <td><%= link_to category.name, category_path(category) %></td>
-        <td><%= time_ago_in_words(category.created_at) %></td>
-        <td><%= time_ago_in_words(category.updated_at) %></td>
-        <td><%= link_to 'Show', category %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+<p class="flickr_pagination">
+  <%= link_to category.name, category_path(category) %>
+</p>

@@ -17,6 +17,13 @@
   <%= @article.user.username if @article.user %>
 </p>
 
+<% if @article.categories.any? %>
+  <p>
+    <strong>Categories</strong>
+    <%= render @article.categories %>
+  </p>
+<%end%>
+
 <p>
   <% if logged_in? && (@article.user == current_user || current_user.admin?)%>
     <%= link_to 'Edit', edit_article_path(@article) %>
