@@ -10,7 +10,7 @@
 <%= render 'category' %>
 
 <p>
-  <% if logged_in? %>
+  <% if logged_in? && current_user.admin?%>
     <td><%= link_to 'Create New Category', new_category_path %></td>
   <% end %>
   <td><%= render 'sessions/login_footer' %></td>
