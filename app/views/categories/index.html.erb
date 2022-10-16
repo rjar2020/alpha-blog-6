@@ -1,0 +1,16 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Categories</h1>
+
+<div class="flickr_pagination">
+    <%= will_paginate @categories, :container => false %>
+</div>
+<br>
+<%= render 'category' %>
+
+<p>
+  <% if logged_in? %>
+    <td><%= link_to 'Create New Category', new_category_path %></td>
+  <% end %>
+  <td><%= render 'sessions/login_footer' %></td>
+</p>
