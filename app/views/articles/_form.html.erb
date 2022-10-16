@@ -21,6 +21,11 @@
 </p>
 
 <p> 
+  <%= f.label :category %>
+  <%= f.collection_select(:category_ids, Category.all, :id, :name, { prompt: "Make your selection from the list bellow (can be empty)"}, { multiple: true })%>
+</p>
+
+<p> 
   <%= f.submit %>
 </p>
 
