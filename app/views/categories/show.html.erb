@@ -2,11 +2,25 @@
 <p id="notice" style="color:green;"><%= notice %></p>
 <p id="alert" style="color:red;"><%= alert %></p>
 
-<p>
+<p><h2>
   <strong>Title:</strong>
   <%= @category.name %>
+  <h2>
 </p>
 
+<h3>Articles</h3>
+<br>
+
+<div class="flickr_pagination">
+    <%= will_paginate @articles, :container => false %>
+</div>
+<br>
+
+<%= render 'articles/article' %>
+
 <p>
+  <% if logged_in? && current_user.admin %>
+    <%= link_to 'Edit category', edit_category_path(@category) %>
+  <%end%>
   <%= render 'sessions/login_footer' %>
 </p>
